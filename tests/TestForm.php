@@ -2,10 +2,10 @@
 
 namespace Tests;
 
-use Revolution\ZendForm\Form as ZendForm;
-use Zend\Form\Element;
+use Revolution\LaminasForm\Form;
+use Laminas\Form\Element;
 
-class TestForm extends ZendForm
+class TestForm extends Form
 {
     /**
      * Create a new form.

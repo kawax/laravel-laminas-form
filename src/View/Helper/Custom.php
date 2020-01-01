@@ -1,12 +1,12 @@
 <?php
 
-namespace Revolution\ZendForm\View\Helper;
+namespace Revolution\LaminasForm\View\Helper;
 
-use Zend\Form\ElementInterface;
-use Zend\Form\View\Helper\Form;
+use Laminas\Form\ElementInterface;
+use Laminas\Form\View\Helper\Form;
 
-use Revolution\ZendForm\View\Concerns\Render;
-use Revolution\ZendForm\View\Concerns\Label;
+use Revolution\LaminasForm\View\Concerns\Render;
+use Revolution\LaminasForm\View\Concerns\Label;
 
 /**
  * ViewHelper does not require the use of trait

@@ -74,11 +74,11 @@ $this->add([
 app/Http/Forms/Helper/Custom.php
 ```
 
-https://github.com/zendframework/zend-form/tree/master/src/View/Helper
+https://github.com/laminas/laminas-form/tree/master/src/View/Helper
 
-### Publish config file(config/zend-from.php)
+### Publish config file(config/laminas-from.php)
 ```
-php artisan vendor:publish --provider="Revolution\ZendForm\Providers\ZendFormServiceProvider"
+php artisan vendor:publish --provider="Revolution\LaminasForm\Providers\LaminasFormServiceProvider"
 ```
 
 ### Add to config
@@ -86,14 +86,14 @@ php artisan vendor:publish --provider="Revolution\ZendForm\Providers\ZendFormSer
 ```php
 return [
     'aliases'   => [
-        'bootstrap4horizon' => Revolution\ZendForm\View\Helper\Bootstrap4Horizon::class,
-        'uikit3horizon'     => Revolution\ZendForm\View\Helper\Uikit3Horizon::class,
+        'bootstrap4horizon' => Revolution\LaminasForm\View\Helper\Bootstrap4Horizon::class,
+        'uikit3horizon'     => Revolution\LaminasForm\View\Helper\Uikit3Horizon::class,
         'custom'            => App\Http\Forms\Helper\Custom::class,
     ],
     'factories' => [
-        Revolution\ZendForm\View\Helper\Bootstrap4Horizon::class => Zend\ServiceManager\Factory\InvokableFactory::class,
-        Revolution\ZendForm\View\Helper\Uikit3Horizon::class     => Zend\ServiceManager\Factory\InvokableFactory::class,
-        App\Http\Forms\Helper\Custom::class                      => Zend\ServiceManager\Factory\InvokableFactory::class,
+        Revolution\LaminasForm\View\Helper\Bootstrap4Horizon::class => Laminas\ServiceManager\Factory\InvokableFactory::class,
+        Revolution\LaminasForm\View\Helper\Uikit3Horizon::class     => Laminas\ServiceManager\Factory\InvokableFactory::class,
+        App\Http\Forms\Helper\Custom::class                      => Laminas\ServiceManager\Factory\InvokableFactory::class,
     ],
 ];
 ```

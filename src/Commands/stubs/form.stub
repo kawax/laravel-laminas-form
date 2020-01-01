@@ -2,10 +2,10 @@
 
 namespace DummyNamespace;
 
-use Revolution\ZendForm\Form as ZendForm;
-use Zend\Form\Element;
+use Revolution\LaminasForm\Form;
+use Laminas\Form\Element;
 
-class DummyClass extends ZendForm
+class DummyClass extends Form
 {
     /**
      * Create a new form.

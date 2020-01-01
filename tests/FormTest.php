@@ -2,10 +2,10 @@
 
 namespace Tests;
 
-use Revolution\ZendForm\Form;
+use Revolution\LaminasForm\Form;
 
-use Zend\View\Renderer\RendererInterface;
-use Zend\View\Renderer\PhpRenderer;
+use Laminas\View\Renderer\RendererInterface;
+use Laminas\View\Renderer\PhpRenderer;
 
 class FormTest extends TestCase
 {
