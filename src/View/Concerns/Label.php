@@ -1,8 +1,8 @@
 <?php
 
-namespace Revolution\ZendForm\View\Concerns;
+namespace Revolution\LaminasForm\View\Concerns;
 
-use Zend\Form\ElementInterface;
+use Laminas\Form\ElementInterface;
 
 trait Label
 {

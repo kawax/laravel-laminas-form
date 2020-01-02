@@ -1,15 +1,15 @@
 <?php
 
-namespace Revolution\ZendForm;
+namespace Revolution\LaminasForm;
 
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Support\HtmlString;
 
-use Zend\Form\Form as ZendForm;
-use Zend\View\Renderer\RendererInterface;
+use Laminas\Form\Form as LaminasForm;
+use Laminas\View\Renderer\RendererInterface;
 
-class Form extends ZendForm
+class Form extends LaminasForm
 {
     /**
      * @return RendererInterface

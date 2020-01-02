@@ -1,18 +1,18 @@
 <?php
 
-namespace Revolution\ZendForm\Providers;
+namespace Revolution\LaminasForm\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-use Zend\View\Renderer\RendererInterface;
-use Zend\View\Renderer\PhpRenderer;
-use Zend\View\HelperPluginManager;
-use Zend\Form\ConfigProvider;
-use Zend\ServiceManager\ServiceManager;
+use Laminas\View\Renderer\RendererInterface;
+use Laminas\View\Renderer\PhpRenderer;
+use Laminas\View\HelperPluginManager;
+use Laminas\Form\ConfigProvider;
+use Laminas\ServiceManager\ServiceManager;
 
-use Revolution\ZendForm\Commands;
+use Revolution\LaminasForm\Commands;
 
-class ZendFormServiceProvider extends ServiceProvider
+class LaminasFormServiceProvider extends ServiceProvider
 {
     /**
      * Boot the service provider.
@@ -29,7 +29,7 @@ class ZendFormServiceProvider extends ServiceProvider
 
         $this->publishes(
             [
-                __DIR__.'/../config/zend-form.php' => config_path('zend-form.php'),
+                __DIR__.'/../config/laminas-form.php' => config_path('laminas-form.php'),
             ]
         );
     }
@@ -42,8 +42,8 @@ class ZendFormServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/../config/zend-form.php',
-            'zend-form'
+            __DIR__.'/../config/laminas-form.php',
+            'laminas-form'
         );
 
         $this->app->singleton(
@@ -54,7 +54,7 @@ class ZendFormServiceProvider extends ServiceProvider
 
                 $config = array_merge_recursive(
                     $configProvider->getViewHelperConfig(),
-                    $app['config']['zend-form']
+                    $app['config']['laminas-form']
                 );
 
                 $pluginManager = new HelperPluginManager(new ServiceManager(), $config);

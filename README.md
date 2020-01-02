@@ -1,30 +1,30 @@
-# Laravel Zend Form
-[![Build Status](https://travis-ci.org/kawax/laravel-zend-form.svg?branch=master)](https://travis-ci.org/kawax/laravel-zend-form)
-[![Maintainability](https://api.codeclimate.com/v1/badges/7bc3ab814fbd2454b6ec/maintainability)](https://codeclimate.com/github/kawax/laravel-zend-form/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/7bc3ab814fbd2454b6ec/test_coverage)](https://codeclimate.com/github/kawax/laravel-zend-form/test_coverage)
+# Laravel Laminas Form
+[![Build Status](https://travis-ci.com/kawax/laravel-laminas-form.svg?branch=master)](https://travis-ci.com/kawax/laravel-laminas-form)
+[![Maintainability](https://api.codeclimate.com/v1/badges/21666cb8ec565a23d92c/maintainability)](https://codeclimate.com/github/kawax/laravel-laminas-form/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/21666cb8ec565a23d92c/test_coverage)](https://codeclimate.com/github/kawax/laravel-laminas-form/test_coverage)
 
-![Laravel Zend Form](screenshot.png)
+![Laravel Laminas Form](screenshot.png)
 
-https://docs.zendframework.com/zend-form/
+https://docs.laminas.dev/laminas-form/
 
 ## Requirements
-- PHP >= 7.1
-- Laravel >= 5.5
+- PHP >= 7.2
+- Laravel >= 6.0
 
 ## Installation
 
 ```
-composer require revolution/laravel-zend-form
+composer require revolution/laravel-laminas-form
 ```
 
-### Suggest from ZendForm
-https://github.com/zendframework/zend-form/blob/master/composer.json
+### Suggest from LaminasForm
+https://github.com/laminas/laminas-form/blob/master/composer.json
 
 ```json
-        "zendframework/zend-captcha": "^2.7.1, required for using CAPTCHA form elements",
-        "zendframework/zend-code": "^2.6 || ^3.0, required to use zend-form annotations support",
-        "zendframework/zend-eventmanager": "^2.6.2 || ^3.0, reuired for zend-form annotations support",
-        "zendframework/zendservice-recaptcha": "in order to use the ReCaptcha form element"
+        "laminas/laminas-captcha": "^2.7.1, required for using CAPTCHA form elements",
+        "laminas/laminas-code": "^2.6 || ^3.0, required to use laminas-form annotations support",
+        "laminas/laminas-eventmanager": "^2.6.2 || ^3.0, reuired for laminas-form annotations support",
+        "laminas/laminas-recaptcha": "in order to use the ReCaptcha form element"
 ```
 
 ## Demo
@@ -43,10 +43,10 @@ app/Http/Forms/SampleForm.php
 ```php
 namespace App\Http\Forms;
 
-use Revolution\ZendForm\Form as ZendForm;
-use Zend\Form\Element;
+use Revolution\LaminasForm\Form;
+use Laminas\Form\Element;
 
-class SampleForm extends ZendForm
+class SampleForm extends Form
 {
     /**
      * Create a new form.
@@ -126,7 +126,7 @@ use App\Http\Forms\SampleForm;
 
     public function __invoke()
     {
-        $form = new SampleForm;
+        $form = new SampleForm();
 
         return view('form')->with(compact('form'));
     }
@@ -149,7 +149,7 @@ use App\Http\Forms\SampleForm;
 {{ $form->render() }}
 ```
 
-Same as ZendForm's `echo $this->form($form);`
+Same as LaminasForm's `echo $this->form($form);`
 
 ### Detail render
 
@@ -185,16 +185,16 @@ Same as ZendForm's `echo $this->form($form);`
 {!! $form->form()->closeTag($form) !!}
 ```
 
-Form object can call Zend's ViewHelper by magic method.
+Form object can call Laminas's ViewHelper by magic method.
 
-See https://docs.zendframework.com/zend-form/quick-start/
+See https://docs.laminas.dev/quick-start/
 
 ## ViewHelper render
 ```php
 {{ $form->render('bootstrap4horizon') }}
 ```
 
-https://github.com/kawax/laravel-zend-form/blob/master/docs/helpers.md
+https://github.com/kawax/laravel-laminas-form/blob/master/docs/helpers.md
 
 ## Validation
 Use Laravel's FormRequest.

@@ -1,6 +1,6 @@
 <?php
 
-namespace Revolution\ZendForm\Commands;
+namespace Revolution\LaminasForm\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 

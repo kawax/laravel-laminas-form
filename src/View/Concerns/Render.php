@@ -1,9 +1,9 @@
 <?php
 
-namespace Revolution\ZendForm\View\Concerns;
+namespace Revolution\LaminasForm\View\Concerns;
 
-use Zend\Form\FieldsetInterface;
-use Zend\Form\FormInterface;
+use Laminas\Form\FieldsetInterface;
+use Laminas\Form\FormInterface;
 
 trait Render
 {
