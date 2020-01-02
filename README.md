@@ -28,7 +28,7 @@ https://github.com/laminas/laminas-form/blob/master/composer.json
 ```
 
 ## Demo
-https://github.com/kawax/laravel-zend-form-project
+https://github.com/kawax/laravel-laminas-form-project
 
 ## Artisan command
 
