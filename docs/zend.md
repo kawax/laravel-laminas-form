@@ -3,7 +3,7 @@
 ## composer.json
 
 ```
-"revolution/laravel-laminas-form": "^1.0",
+"revolution/laravel-laminas-form": "^1.2",
 ```
 
 ## config/zend-form.php
