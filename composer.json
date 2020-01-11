@@ -29,7 +29,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Tests\\": "tests/"
+      "Revolution\\LaminasForm\\Tests\\": "tests/"
     }
   },
   "authors": [

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Revolution\LaminasForm\Tests;
 
 use Revolution\LaminasForm\Providers\LaminasFormServiceProvider;
 
