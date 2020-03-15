@@ -30,7 +30,8 @@ class LaminasFormServiceProvider extends ServiceProvider
         $this->publishes(
             [
                 __DIR__.'/../config/laminas-form.php' => config_path('laminas-form.php'),
-            ]
+            ],
+            'laminas-form-config'
         );
     }
 

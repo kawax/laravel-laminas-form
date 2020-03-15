@@ -78,7 +78,7 @@ https://github.com/laminas/laminas-form/tree/master/src/View/Helper
 
 ### Publish config file(config/laminas-from.php)
 ```
-php artisan vendor:publish --provider="Revolution\LaminasForm\Providers\LaminasFormServiceProvider"
+php artisan vendor:publish --tag=laminas-form-config
 ```
 
 ### Add to config
