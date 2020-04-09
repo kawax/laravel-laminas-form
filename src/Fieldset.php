@@ -1,15 +1,17 @@
 <?php
 
+
 namespace Revolution\LaminasForm;
+
 
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Support\HtmlString;
 
-use Laminas\Form\Form as LaminasForm;
+use Laminas\Form\Fieldset as LaminasFieldset;
 use Laminas\View\Renderer\RendererInterface;
 
-class Form extends LaminasForm
+class Fieldset extends LaminasFieldset
 {
     /**
      * @return RendererInterface
@@ -22,14 +24,14 @@ class Form extends LaminasForm
     }
 
     /**
-     * @param  string  $helper
+     * @param string $helper
      *
      * @return HtmlString
      *
      * @throws BindingResolutionException
      * @throws \BadMethodCallException
      */
-    public function render(string $helper = 'form'): HtmlString
+    public function render(string $helper = 'formCollection'): HtmlString
     {
         $renderer = $this->getRenderer();
 
@@ -41,8 +43,8 @@ class Form extends LaminasForm
     }
 
     /**
-     * @param  string  $method
-     * @param  array  $arguments
+     * @param string $method
+     * @param array $arguments
      *
      * @return mixed
      *
