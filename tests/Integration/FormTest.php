@@ -2,7 +2,6 @@
 
 namespace Revolution\LaminasForm\Tests\Integration;
 
-use Laminas\ServiceManager\Exception\ServiceNotFoundException;
 use Laminas\View\Renderer\PhpRenderer;
 use Laminas\View\Renderer\RendererInterface;
 use Revolution\LaminasForm\Form;
@@ -14,20 +13,6 @@ class FormTest extends TestCase
     {
         $form = new Form;
         $this->assertInstanceOf(Form::class, $form);
-    }
-
-    /**
-     * @param string $formHelper
-     * @testWith    ["anyOtherHelperMethodThatNoBodyWouldImplement"]
-     *              ["anyOtherHelperMethodThatNoBodyWouldImplementEver"]
-     * @throws \Laminas\ServiceManager\Exception\ServiceNotFoundException
-     * @throws \Illuminate\Contracts\Container\BindingResolutionException
-     */
-    public function testRenderThrowsServiceNotFoundExceptionOnWrongHelper(string $formHelper): void
-    {
-        $this->expectException(ServiceNotFoundException::class);
-        $form = new Form();
-        $form->render($formHelper);
     }
 
     public function testRender(): void
@@ -78,17 +63,6 @@ class FormTest extends TestCase
         //dump($html);
 
         $this->assertStringContainsString('uk-text-meta', $html);
-    }
-
-    public function testHelperThrowsServiceNotFoundExceptionOnInvalidMethod(): void
-    {
-        $this->expectException(ServiceNotFoundException::class);
-        $helperName = uniqid('anyFakedMethod', true);
-        $this->expectExceptionMessage(
-            'A plugin by the name "' . $helperName . '" was not found in the plugin manager Laminas\View\HelperPluginManager'
-        );
-        $form = new Form();
-        $form->$helperName($form);
     }
 
     public function testFormRenderWithHelper(): void
