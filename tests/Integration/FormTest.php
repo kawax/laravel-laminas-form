@@ -1,11 +1,12 @@
 <?php
 
-namespace Revolution\LaminasForm\Tests;
+namespace Revolution\LaminasForm\Tests\Integration;
 
 use Laminas\ServiceManager\Exception\ServiceNotFoundException;
 use Laminas\View\Renderer\PhpRenderer;
 use Laminas\View\Renderer\RendererInterface;
 use Revolution\LaminasForm\Form;
+use Revolution\LaminasForm\Tests\TestCase;
 
 class FormTest extends TestCase
 {

@@ -4,14 +4,12 @@ namespace Revolution\LaminasForm\View\Helper;
 
 use Laminas\Form\ElementInterface;
 use Laminas\Form\View\Helper\Form;
-
-use Revolution\LaminasForm\View\Concerns\Render;
 use Revolution\LaminasForm\View\Concerns\Label;
+use Revolution\LaminasForm\View\Concerns\Render;
 
 /**
  * ViewHelper does not require the use of trait
  *
- * @codeCoverageIgnore
  */
 class Custom extends Form
 {
@@ -19,15 +17,15 @@ class Custom extends Form
     use Render;
 
     protected const DEFAULTS = [
-        'wrapper'    => 'form-group row',
-        'element'    => 'col-sm-10',
-        'submit'     => 'btn btn-primary',
-        'help_open'  => '<small class="form-text text-muted">',
+        'wrapper' => 'form-group row',
+        'element' => 'col-sm-10',
+        'submit' => 'btn btn-primary',
+        'help_open' => '<small class="form-text text-muted">',
         'help_close' => '</small>',
     ];
 
     /**
-     * @param  ElementInterface  $element
+     * @param ElementInterface $element
      *
      * @return string
      */
@@ -53,7 +51,7 @@ class Custom extends Form
     }
 
     /**
-     * @param  ElementInterface  $element
+     * @param ElementInterface $element
      *
      * @return string
      */
@@ -73,7 +71,7 @@ class Custom extends Form
     }
 
     /**
-     * @param  ElementInterface  $element
+     * @param ElementInterface $element
      *
      * @return string
      */
