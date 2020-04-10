@@ -5,7 +5,6 @@ namespace Revolution\LaminasForm;
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Support\HtmlString;
-
 use Laminas\Form\Form as LaminasForm;
 use Laminas\View\Renderer\RendererInterface;
 
@@ -22,7 +21,7 @@ class Form extends LaminasForm
     }
 
     /**
-     * @param  string  $helper
+     * @param string $helper
      *
      * @return HtmlString
      *
@@ -33,16 +32,12 @@ class Form extends LaminasForm
     {
         $renderer = $this->getRenderer();
 
-        if (is_callable([$renderer, $helper])) {
-            return new HtmlString($renderer->$helper($this));
-        }
-
-        throw new \BadMethodCallException(sprintf('Method [%s] does not exist.', $helper));
+        return new HtmlString($renderer->$helper($this));
     }
 
     /**
-     * @param  string  $method
-     * @param  array  $arguments
+     * @param string $method
+     * @param array $arguments
      *
      * @return mixed
      *

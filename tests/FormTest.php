@@ -2,49 +2,62 @@
 
 namespace Revolution\LaminasForm\Tests;
 
-use Revolution\LaminasForm\Form;
-
-use Laminas\View\Renderer\RendererInterface;
+use Laminas\ServiceManager\Exception\ServiceNotFoundException;
 use Laminas\View\Renderer\PhpRenderer;
+use Laminas\View\Renderer\RendererInterface;
+use Revolution\LaminasForm\Form;
 
 class FormTest extends TestCase
 {
-    public function testInstance()
+    public function testInstance(): void
     {
         $form = new Form;
-
         $this->assertInstanceOf(Form::class, $form);
     }
 
-    public function testRender()
+    /**
+     * @param string $formHelper
+     * @testWith    ["anyOtherHelperMethodThatNoBodyWouldImplement"]
+     *              ["anyOtherHelperMethodThatNoBodyWouldImplementEver"]
+     * @throws \Laminas\ServiceManager\Exception\ServiceNotFoundException
+     * @throws \Illuminate\Contracts\Container\BindingResolutionException
+     */
+    public function testRenderThrowsBadMethodCallExceptionOnWrongHelper(string $formHelper): void
+    {
+        $this->expectException(ServiceNotFoundException::class);
+        $form = new Form();
+        $form->render($formHelper);
+    }
+
+    public function testRender(): void
     {
         $form = new TestForm();
 
-        $this->assertStringContainsString('<form', (string) $form->render());
+        $this->assertStringContainsString('<form', (string)$form->render());
     }
 
-    public function testOpenTag()
+    public function testOpenTag(): void
     {
         $form = new TestForm();
 
         $this->assertStringContainsString('<form', $form->form()->openTag($form));
     }
 
-    public function testInput()
+    public function testInput(): void
     {
         $form = new TestForm();
 
         $this->assertStringContainsString('<input type="text" name="name"', $form->formInput($form->get('name')));
     }
 
-    public function testRenderer()
+    public function testRenderer(): void
     {
         $renderer = app(RendererInterface::class);
 
         $this->assertInstanceOf(PhpRenderer::class, $renderer);
     }
 
-    public function testHelperBSHorizon()
+    public function testHelperBSHorizon(): void
     {
         $form = new TestForm();
 
@@ -55,7 +68,7 @@ class FormTest extends TestCase
         $this->assertStringContainsString('form-text text-muted', $html);
     }
 
-    public function testHelperUIHorizon()
+    public function testHelperUIHorizon(): void
     {
         $form = new TestForm();
 
@@ -66,11 +79,11 @@ class FormTest extends TestCase
         $this->assertStringContainsString('uk-text-meta', $html);
     }
 
-    public function testFormRenderWithHelper()
+    public function testFormRenderWithHelper(): void
     {
         $form = new TestForm();
 
-        $html = (string) $form->render('bootstrap4horizon');
+        $html = (string)$form->render('bootstrap4horizon');
 
         //dump($html);
 

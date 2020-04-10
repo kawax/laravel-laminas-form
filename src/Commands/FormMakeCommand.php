@@ -32,7 +32,7 @@ class FormMakeCommand extends GeneratorCommand
      *
      * @return string
      */
-    protected function getStub()
+    protected function getStub(): string
     {
         return __DIR__ . '/stubs/form.stub';
     }
@@ -40,11 +40,11 @@ class FormMakeCommand extends GeneratorCommand
     /**
      * Get the default namespace for the class.
      *
-     * @param  string $rootNamespace
+     * @param string $rootNamespace
      *
      * @return string
      */
-    protected function getDefaultNamespace($rootNamespace)
+    protected function getDefaultNamespace($rootNamespace): string
     {
         return $rootNamespace . '\Http\Forms';
     }
@@ -54,7 +54,7 @@ class FormMakeCommand extends GeneratorCommand
      *
      * @return array
      */
-    protected function getOptions()
+    protected function getOptions(): array
     {
         return [];
     }
