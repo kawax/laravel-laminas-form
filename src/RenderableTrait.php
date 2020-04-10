@@ -29,7 +29,7 @@ trait RenderableTrait
      * @throws BindingResolutionException
      * @throws \BadMethodCallException
      */
-    public function render(string $helper = 'form'): HtmlString
+    public function render(string $helper): HtmlString
     {
         $renderer = $this->getRenderer();
         return new HtmlString($renderer->$helper($this));
