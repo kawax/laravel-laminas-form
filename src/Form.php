@@ -31,7 +31,6 @@ class Form extends LaminasForm
     public function render(string $helper = 'form'): HtmlString
     {
         $renderer = $this->getRenderer();
-
         return new HtmlString($renderer->$helper($this));
     }
 
@@ -48,10 +47,6 @@ class Form extends LaminasForm
     {
         $renderer = $this->getRenderer();
 
-        if (is_callable([$renderer, $method])) {
-            return call_user_func_array([$renderer, $method], $arguments);
-        }
-
-        throw new \BadMethodCallException(sprintf('Method [%s] does not exist.', $method));
+        return call_user_func_array([$renderer, $method], $arguments);
     }
 }
