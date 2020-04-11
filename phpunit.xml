@@ -8,19 +8,20 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          processIsolation="false"
+         failOnWarning="true"
+         failOnRisky="true"
          stopOnFailure="true">
     <testsuites>
-        <testsuite name="Test Suite">
-            <directory>tests</directory>
+        <testsuite name="Unit-tests">
+            <directory>tests/Unit/</directory>
+        </testsuite>
+        <testsuite name="Integration-tests">
+            <directory>tests/Integration/</directory>
         </testsuite>
     </testsuites>
     <filter>
-        <whitelist>
+        <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">src/</directory>
-            <exclude>
-                <directory suffix=".php">src/Providers/</directory>
-                <directory suffix=".php">src/Facades/</directory>
-            </exclude>
         </whitelist>
     </filter>
     <php>

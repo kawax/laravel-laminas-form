@@ -10,11 +10,11 @@ trait Render
     /**
      * Render a form from the provided $form,
      *
-     * @param  FormInterface  $form
+     * @param FormInterface $form
      *
      * @return string
      */
-    public function render(FormInterface $form)
+    public function render(FormInterface $form): string
     {
         if (method_exists($form, 'prepare')) {
             $form->prepare();
@@ -24,13 +24,19 @@ trait Render
 
         foreach ($form as $element) {
             if ($element instanceof FieldsetInterface) {
-                //TODO?
+                /**
+                 * @todo
+                 * not best way to override this method.
+                 * Normal service container functionality is broken through the override
+                 * better would be to replace bindings inside the service container through the config,
+                 * so normal di functionality would work fine.
+                 */
                 $formContent .= $this->getView()->formCollection($element);
             } else {
                 $formContent .= $this->row($element);
             }
         }
 
-        return $this->openTag($form).$formContent.$this->closeTag();
+        return $this->openTag($form) . $formContent . $this->closeTag();
     }
 }
