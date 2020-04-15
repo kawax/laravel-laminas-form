@@ -2,6 +2,7 @@
 
 namespace Revolution\LaminasForm\Providers;
 
+use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 use Laminas\Form\ConfigProvider;
 use Laminas\ServiceManager\ServiceManager;
@@ -47,7 +48,7 @@ class LaminasFormServiceProvider extends ServiceProvider
 
         $this->app->singleton(
             RendererInterface::class,
-            function ($app) {
+            static function (Application $app) {
                 $renderer = new PhpRenderer();
                 $configProvider = new ConfigProvider();
 
@@ -56,7 +57,10 @@ class LaminasFormServiceProvider extends ServiceProvider
                     $app['config']['laminas-form']
                 );
 
-                $pluginManager = new HelperPluginManager(new ServiceManager(), $config);
+                $pluginManager = new HelperPluginManager(
+                    new ServiceManager($app['config']['serviceManager'] ?? []),
+                    $config
+                );
 
                 $renderer->setHelperPluginManager($pluginManager);
 
