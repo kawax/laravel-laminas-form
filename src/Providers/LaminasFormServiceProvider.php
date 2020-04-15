@@ -2,14 +2,13 @@
 
 namespace Revolution\LaminasForm\Providers;
 
+use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
-
-use Laminas\View\Renderer\RendererInterface;
-use Laminas\View\Renderer\PhpRenderer;
-use Laminas\View\HelperPluginManager;
 use Laminas\Form\ConfigProvider;
 use Laminas\ServiceManager\ServiceManager;
-
+use Laminas\View\HelperPluginManager;
+use Laminas\View\Renderer\PhpRenderer;
+use Laminas\View\Renderer\RendererInterface;
 use Revolution\LaminasForm\Commands;
 
 class LaminasFormServiceProvider extends ServiceProvider
@@ -29,7 +28,7 @@ class LaminasFormServiceProvider extends ServiceProvider
 
         $this->publishes(
             [
-                __DIR__.'/../config/laminas-form.php' => config_path('laminas-form.php'),
+                __DIR__ . '/../config/laminas-form.php' => config_path('laminas-form.php'),
             ],
             'laminas-form-config'
         );
@@ -43,22 +42,25 @@ class LaminasFormServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/../config/laminas-form.php',
+            __DIR__ . '/../config/laminas-form.php',
             'laminas-form'
         );
 
         $this->app->singleton(
             RendererInterface::class,
-            function ($app) {
+            static function (Application $app) {
                 $renderer = new PhpRenderer();
                 $configProvider = new ConfigProvider();
 
-                $config = array_merge_recursive(
+                $config = array_replace_recursive(
                     $configProvider->getViewHelperConfig(),
                     $app['config']['laminas-form']
                 );
 
-                $pluginManager = new HelperPluginManager(new ServiceManager(), $config);
+                $pluginManager = new HelperPluginManager(
+                    new ServiceManager($app['config']['serviceManager'] ?? []),
+                    $config
+                );
 
                 $renderer->setHelperPluginManager($pluginManager);
 
