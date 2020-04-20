@@ -47,10 +47,24 @@ class LaminasFormServiceProvider extends ServiceProvider
         );
 
         $this->app->singleton(
+            PhpRenderer::class,
+            static function (Application $app) {
+                return new PhpRenderer();
+            }
+        );
+
+        $this->app->singleton(
+            ConfigProvider::class,
+            static function (Application $app) {
+                return new ConfigProvider();
+            }
+        );
+
+        $this->app->singleton(
             RendererInterface::class,
             static function (Application $app) {
-                $renderer = new PhpRenderer();
-                $configProvider = new ConfigProvider();
+                $renderer = $app->get(PhpRenderer::class);
+                $configProvider = $app->get(ConfigProvider::class);
 
                 $config = array_replace_recursive(
                     $configProvider->getViewHelperConfig(),
