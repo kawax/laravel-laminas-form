@@ -28,7 +28,7 @@ class LaminasFormServiceProvider extends ServiceProvider
 
         $this->publishes(
             [
-                __DIR__ . '/../config/laminas-form.php' => config_path('laminas-form.php'),
+                __DIR__.'/../config/laminas-form.php' => config_path('laminas-form.php'),
             ],
             'laminas-form-config'
         );
@@ -42,27 +42,23 @@ class LaminasFormServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/laminas-form.php',
+            __DIR__.'/../config/laminas-form.php',
             'laminas-form'
         );
 
         $this->app->singleton(
             PhpRenderer::class,
-            static function (Application $app) {
-                return new PhpRenderer();
-            }
+            PhpRenderer::class
         );
 
         $this->app->singleton(
             ConfigProvider::class,
-            static function (Application $app) {
-                return new ConfigProvider();
-            }
+            ConfigProvider::class
         );
 
         $this->app->singleton(
             RendererInterface::class,
-            static function (Application $app) {
+            function (Application $app) {
                 $renderer = $app->get(PhpRenderer::class);
                 $configProvider = $app->get(ConfigProvider::class);
 
