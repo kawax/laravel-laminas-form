@@ -1,15 +1,13 @@
 <?php
 
-
-namespace Revolution\LaminasForm;
-
+namespace Revolution\LaminasForm\Concerns;
 
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Support\HtmlString;
 use Laminas\View\Renderer\RendererInterface;
 
-trait RenderableTrait
+trait Renderable
 {
     /**
      * @return RendererInterface
@@ -22,7 +20,7 @@ trait RenderableTrait
     }
 
     /**
-     * @param string $helper
+     * @param  string  $helper
      *
      * @return HtmlString
      *
@@ -32,12 +30,13 @@ trait RenderableTrait
     public function render(string $helper): HtmlString
     {
         $renderer = $this->getRenderer();
+
         return new HtmlString($renderer->$helper($this));
     }
 
     /**
-     * @param string $method
-     * @param array $arguments
+     * @param  string  $method
+     * @param  array  $arguments
      *
      * @return mixed
      *

@@ -1,20 +1,24 @@
 <?php
 
-
 namespace Revolution\LaminasForm;
-
 
 use Illuminate\Support\HtmlString;
 use Laminas\Form\Fieldset as LaminasFieldset;
 
 class Fieldset extends LaminasFieldset
 {
-    use RenderableTrait {
-        render as parentTrait;
+    use Concerns\Renderable {
+        render as parentRender;
     }
 
+    /**
+     * @param  string  $helper
+     *
+     * @return HtmlString
+     * @throws \Illuminate\Contracts\Container\BindingResolutionException
+     */
     public function render(string $helper = 'formCollection'): HtmlString
     {
-        return $this->parentTrait($helper);
+        return $this->parentRender($helper);
     }
 }

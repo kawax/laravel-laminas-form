@@ -28,7 +28,7 @@ class LaminasFormServiceProvider extends ServiceProvider
 
         $this->publishes(
             [
-                __DIR__.'/../config/laminas-form.php' => config_path('laminas-form.php'),
+                __DIR__.'/../../config/laminas-form.php' => config_path('laminas-form.php'),
             ],
             'laminas-form-config'
         );
@@ -42,7 +42,7 @@ class LaminasFormServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/../config/laminas-form.php',
+            __DIR__.'/../../config/laminas-form.php',
             'laminas-form'
         );
 
