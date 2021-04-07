@@ -8,7 +8,7 @@
 https://docs.laminas.dev/laminas-form/
 
 ## Requirements
-- PHP >= 7.2
+- PHP >= 7.3
 - Laravel >= 6.0
 
 ## Versioning
