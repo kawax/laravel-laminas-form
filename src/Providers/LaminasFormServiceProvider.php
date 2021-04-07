@@ -2,7 +2,6 @@
 
 namespace Revolution\LaminasForm\Providers;
 
-use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 use Laminas\Form\ConfigProvider;
 use Laminas\ServiceManager\ServiceManager;
@@ -46,36 +45,23 @@ class LaminasFormServiceProvider extends ServiceProvider
             'laminas-form'
         );
 
-        $this->app->singleton(
-            PhpRenderer::class,
-            PhpRenderer::class
-        );
+        $this->app->singleton(RendererInterface::class, function ($app) {
+            $renderer = app(PhpRenderer::class);
+            $configProvider = app(ConfigProvider::class);
 
-        $this->app->singleton(
-            ConfigProvider::class,
-            ConfigProvider::class
-        );
+            $config = array_replace_recursive(
+                $configProvider->getViewHelperConfig(),
+                config('laminas-form')
+            );
 
-        $this->app->singleton(
-            RendererInterface::class,
-            function (Application $app) {
-                $renderer = $app->get(PhpRenderer::class);
-                $configProvider = $app->get(ConfigProvider::class);
+            $pluginManager = new HelperPluginManager(
+                new ServiceManager(config('serviceManager') ?? []),
+                $config
+            );
 
-                $config = array_replace_recursive(
-                    $configProvider->getViewHelperConfig(),
-                    $app['config']['laminas-form']
-                );
+            $renderer->setHelperPluginManager($pluginManager);
 
-                $pluginManager = new HelperPluginManager(
-                    new ServiceManager($app['config']['serviceManager'] ?? []),
-                    $config
-                );
-
-                $renderer->setHelperPluginManager($pluginManager);
-
-                return $renderer;
-            }
-        );
+            return $renderer;
+        });
     }
 }
