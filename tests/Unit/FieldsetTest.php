@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Revolution\LaminasForm\Tests\Unit;
-
 
 use Laminas\Form\Element\Text;
 use Laminas\ServiceManager\Exception\ServiceNotFoundException;
@@ -46,7 +44,7 @@ class FieldsetTest extends TestCase
         $this->expectException(ServiceNotFoundException::class);
         $helperName = uniqid('anyFakedMethod', true);
         $this->expectExceptionMessage(
-            'A plugin by the name "' . $helperName . '" was not found in the plugin manager Laminas\View\HelperPluginManager'
+            'A plugin by the name "'.$helperName.'" was not found in the plugin manager Laminas\View\HelperPluginManager'
         );
         $this->fieldset->$helperName($this->fieldset);
     }

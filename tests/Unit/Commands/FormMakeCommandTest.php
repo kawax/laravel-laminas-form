@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Revolution\LaminasForm\Tests\Unit\Commands;
-
 
 use Illuminate\Filesystem\Filesystem;
 use Revolution\LaminasForm\Commands\FormMakeCommand;
@@ -31,6 +29,4 @@ class FormMakeCommandTest extends TestCase
     {
         $this->assertEquals('Create a new form class', $this->command->getDescription());
     }
-
-
 }

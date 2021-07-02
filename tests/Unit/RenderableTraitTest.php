@@ -2,8 +2,8 @@
 
 namespace Revolution\LaminasForm\Tests\Unit;
 
-use Revolution\LaminasForm\Form;
 use Revolution\LaminasForm\Concerns\Renderable;
+use Revolution\LaminasForm\Form;
 use Revolution\LaminasForm\Tests\TestCase;
 
 class RenderableTraitTest extends TestCase
@@ -20,13 +20,12 @@ class RenderableTraitTest extends TestCase
         $this->trait = $trait;
     }
 
-
     public function callDataProvider(): array
     {
         return [
             ['formCollection', '<fieldset ></fieldset>'],
             ['formRow', '<input name="test" type="text" value="">'],
-            ['formSubmit', '<input name="test" type="submit" value="">']
+            ['formSubmit', '<input name="test" type="submit" value="">'],
         ];
     }
 

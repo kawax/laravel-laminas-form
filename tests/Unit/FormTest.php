@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Revolution\LaminasForm\Tests\Unit;
-
 
 use Laminas\Form\Element\Text;
 use Laminas\ServiceManager\Exception\ServiceNotFoundException;
@@ -12,7 +10,6 @@ use Revolution\LaminasForm\Tests\TestCase;
 
 class FormTest extends TestCase
 {
-
     protected $form;
 
     public function setUp(): void
@@ -20,7 +17,6 @@ class FormTest extends TestCase
         parent::setUp();
         $this->form = new Form();
     }
-
 
     public function testRenderWithElementsWorksCorrect(): void
     {
@@ -66,7 +62,7 @@ class FormTest extends TestCase
         $this->expectException(ServiceNotFoundException::class);
         $helperName = uniqid('anyFakedMethod', true);
         $this->expectExceptionMessage(
-            'A plugin by the name "' . $helperName . '" was not found in the plugin manager Laminas\View\HelperPluginManager'
+            'A plugin by the name "'.$helperName.'" was not found in the plugin manager Laminas\View\HelperPluginManager'
         );
         $this->form->$helperName($this->form);
     }

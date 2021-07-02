@@ -8,7 +8,7 @@ use Laminas\Form\FormInterface;
 trait Render
 {
     /**
-     * Render a form from the provided $form,
+     * Render a form from the provided $form,.
      *
      * @param FormInterface $form
      *
@@ -37,6 +37,6 @@ trait Render
             }
         }
 
-        return $this->openTag($form) . $formContent . $this->closeTag();
+        return $this->openTag($form).$formContent.$this->closeTag();
     }
 }

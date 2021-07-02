@@ -19,7 +19,7 @@ class FormTest extends TestCase
     {
         $form = new TestForm();
 
-        $this->assertStringContainsString('<form', (string)$form->render());
+        $this->assertStringContainsString('<form', (string) $form->render());
     }
 
     public function testOpenTag(): void
@@ -69,7 +69,7 @@ class FormTest extends TestCase
     {
         $form = new TestForm();
 
-        $html = (string)$form->render('bootstrap4horizon');
+        $html = (string) $form->render('bootstrap4horizon');
 
         //dump($html);
 
