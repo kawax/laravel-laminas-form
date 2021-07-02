@@ -1,9 +1,11 @@
 <?php
 
-
 namespace Revolution\LaminasForm\Tests\Unit\View\Helper;
 
-use Laminas\Form\{ConfigProvider, Element\Submit, Element\Text, Form};
+use Laminas\Form\ConfigProvider;
+use Laminas\Form\Element\Submit;
+use Laminas\Form\Element\Text;
+use Laminas\Form\Form;
 use Laminas\ServiceManager\ServiceManager;
 use Laminas\View\HelperPluginManager;
 use Laminas\View\Renderer\PhpRenderer;
@@ -61,7 +63,7 @@ class CustomTest extends TestCase
         $form->add($element);
         $output = $this->helper->render($form);
         $this->assertStringContainsString(
-            '<button type="submit" class="btn btn-primary">' . $value . '</button>',
+            '<button type="submit" class="btn btn-primary">'.$value.'</button>',
             $output
         );
     }

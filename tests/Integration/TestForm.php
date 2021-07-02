@@ -49,7 +49,6 @@ class TestForm extends Form
 
         $this->add($name);
 
-
         $this->add(
             [
                 'type' => Element\Email::class,

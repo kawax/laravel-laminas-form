@@ -8,8 +8,7 @@ use Revolution\LaminasForm\View\Concerns\Label;
 use Revolution\LaminasForm\View\Concerns\Render;
 
 /**
- * ViewHelper does not require the use of trait
- *
+ * ViewHelper does not require the use of trait.
  */
 class Custom extends Form
 {

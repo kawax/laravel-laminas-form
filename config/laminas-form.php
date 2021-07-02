@@ -1,6 +1,6 @@
 <?php
 /**
- * Additional View Helpers
+ * Additional View Helpers.
  *
  * https://github.com/laminas/laminas-form/blob/master/src/ConfigProvider.php
  */
