@@ -1,9 +1,8 @@
 # Laravel Laminas Form
-[![Build Status](https://travis-ci.com/kawax/laravel-laminas-form.svg?branch=master)](https://travis-ci.com/kawax/laravel-laminas-form)
 [![Maintainability](https://api.codeclimate.com/v1/badges/21666cb8ec565a23d92c/maintainability)](https://codeclimate.com/github/kawax/laravel-laminas-form/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/21666cb8ec565a23d92c/test_coverage)](https://codeclimate.com/github/kawax/laravel-laminas-form/test_coverage)
 
-![Laravel Laminas Form](screenshot.png)
+![Laravel Laminas Form](screenshot_bs5.png)
 
 https://docs.laminas.dev/laminas-form/
 
@@ -80,7 +79,7 @@ class SampleForm extends Form
             'class' => 'col-sm-2 col-form-label',
         ]);
         $name->setOptions([
-            'wrapper-class' => 'form-group row',
+            'wrapper-class' => 'mb-3 row',
             'element-class' => 'col-sm-10',
         ]);
 
@@ -99,7 +98,7 @@ class SampleForm extends Form
                 'label_attributes' => [
                     'class' => 'col-sm-2 col-form-label',
                 ],
-                'wrapper-class'    => 'form-group row',
+                'wrapper-class'    => 'mb-3 row',
                 'element-class'    => 'col-sm-10',
             ],
         ]);
@@ -167,21 +166,21 @@ Same as LaminasForm's `echo $this->form($form);`
 
 {{ csrf_field() }}
 
-<div class="form-group row">
+<div class="mb-3 row">
     <label for="name" class="col-sm-3 col-form-label">{!! $form->get('name')->getLabel()  !!}</label>
     <div class="col-sm-9">
         {!! $form->formInput($form->get('name')) !!}
     </div>
 </div>
 
-<div class="form-group row">
+<div class="mb-3 row">
     <label for="email" class="col-sm-3 col-form-label">{!! $form->get('email')->getLabel()  !!}</label>
     <div class="col-sm-9">
         {!! $form->formInput($form->get('email')) !!}
     </div>
 </div>
 
-<div class="form-group row">
+<div class="mb-3 row">
     <div class="col-sm-9 offset-sm-3">
         {!! $form->formSubmit($form->get('send')) !!}
     </div>
@@ -196,7 +195,7 @@ See https://docs.laminas.dev/quick-start/
 
 ## ViewHelper render
 ```php
-{{ $form->render('bootstrap4horizon') }}
+{{ $form->render('bootstrap5horizon') }}
 ```
 
 https://github.com/kawax/laravel-laminas-form/blob/master/docs/helpers.md

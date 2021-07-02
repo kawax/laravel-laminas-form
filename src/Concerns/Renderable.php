@@ -47,6 +47,6 @@ trait Renderable
     {
         $renderer = $this->getRenderer();
 
-        return call_user_func_array([$renderer, $method], $arguments);
+        return call_user_func_array([$renderer, $method], array_values($arguments));
     }
 }
