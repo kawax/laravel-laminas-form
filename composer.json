@@ -44,10 +44,5 @@
         "Revolution\\LaminasForm\\Providers\\LaminasFormServiceProvider"
       ]
     }
-  },
-  "config": {
-    "platform": {
-      "php": "8.0.0"
-    }
   }
 }
