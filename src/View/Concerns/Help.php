@@ -8,7 +8,6 @@ trait Help
 {
     /**
      * @param  ElementInterface  $element
-     *
      * @return string
      */
     protected function helpText(ElementInterface $element)

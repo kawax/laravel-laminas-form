@@ -8,7 +8,6 @@ trait Label
 {
     /**
      * @param  ElementInterface  $element
-     *
      * @return string
      */
     protected function label(ElementInterface $element)

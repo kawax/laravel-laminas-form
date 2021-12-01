@@ -10,8 +10,7 @@ class TestForm extends Form
     /**
      * Create a new form.
      *
-     * @param null|string $name
-     *
+     * @param  null|string  $name
      * @return void
      */
     public function __construct($name = null)
