@@ -24,8 +24,7 @@ class Custom extends Form
     ];
 
     /**
-     * @param ElementInterface $element
-     *
+     * @param  ElementInterface  $element
      * @return string
      */
     protected function row(ElementInterface $element)
@@ -50,8 +49,7 @@ class Custom extends Form
     }
 
     /**
-     * @param ElementInterface $element
-     *
+     * @param  ElementInterface  $element
      * @return string
      */
     protected function submit(ElementInterface $element)
@@ -70,8 +68,7 @@ class Custom extends Form
     }
 
     /**
-     * @param ElementInterface $element
-     *
+     * @param  ElementInterface  $element
      * @return string
      */
     protected function helpText(ElementInterface $element)

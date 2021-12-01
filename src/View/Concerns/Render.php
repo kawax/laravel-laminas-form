@@ -10,8 +10,7 @@ trait Render
     /**
      * Render a form from the provided $form,.
      *
-     * @param FormInterface $form
-     *
+     * @param  FormInterface  $form
      * @return string
      */
     public function render(FormInterface $form): string

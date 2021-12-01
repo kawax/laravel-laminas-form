@@ -47,7 +47,7 @@ class CustomTest extends TestCase
     }
 
     /**
-     * @param bool $withValue
+     * @param  bool  $withValue
      * @testWith    [true]
      *              [false]
      */
