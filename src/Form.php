@@ -13,8 +13,8 @@ class Form extends LaminasForm
 
     /**
      * @param  string  $helper
-     *
      * @return HtmlString
+     *
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
     public function render(string $helper = 'form'): HtmlString

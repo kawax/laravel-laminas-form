@@ -45,9 +45,10 @@ class FormTest extends TestCase
     }
 
     /**
-     * @param string $formHelper
+     * @param  string  $formHelper
      * @testWith    ["anyOtherHelperMethodThatNoBodyWouldImplement"]
      *              ["anyOtherHelperMethodThatNoBodyWouldImplementEver"]
+     *
      * @throws \Laminas\ServiceManager\Exception\ServiceNotFoundException
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */

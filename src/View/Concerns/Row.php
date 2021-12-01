@@ -8,7 +8,6 @@ trait Row
 {
     /**
      * @param  ElementInterface  $element
-     *
      * @return string
      */
     protected function row(ElementInterface $element)
