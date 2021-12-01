@@ -8,7 +8,6 @@ trait Submit
 {
     /**
      * @param  ElementInterface  $element
-     *
      * @return string
      */
     protected function submit(ElementInterface $element)

@@ -13,8 +13,8 @@ class Fieldset extends LaminasFieldset
 
     /**
      * @param  string  $helper
-     *
      * @return HtmlString
+     *
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
     public function render(string $helper = 'formCollection'): HtmlString
