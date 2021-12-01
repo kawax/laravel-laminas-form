@@ -21,7 +21,6 @@ trait Renderable
 
     /**
      * @param  string  $helper
-     *
      * @return HtmlString
      *
      * @throws BindingResolutionException
@@ -37,7 +36,6 @@ trait Renderable
     /**
      * @param  string  $method
      * @param  array  $arguments
-     *
      * @return mixed
      *
      * @throws BindingResolutionException

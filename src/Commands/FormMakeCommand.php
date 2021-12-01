@@ -29,7 +29,9 @@ class FormMakeCommand extends GeneratorCommand
 
     /**
      * Get the stub file for the generator.
+     *
      * @codeCoverageIgnore
+     *
      * @return string
      */
     protected function getStub(): string
@@ -39,9 +41,10 @@ class FormMakeCommand extends GeneratorCommand
 
     /**
      * Get the default namespace for the class.
-     * @codeCoverageIgnore
-     * @param string $rootNamespace
      *
+     * @codeCoverageIgnore
+     *
+     * @param  string  $rootNamespace
      * @return string
      */
     protected function getDefaultNamespace($rootNamespace): string
