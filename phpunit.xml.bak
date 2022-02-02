@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="vendor/autoload.php"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         verbose="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         failOnWarning="true"
+         failOnRisky="true"
+         stopOnFailure="true">
+    <testsuites>
+        <testsuite name="Unit-tests">
+            <directory>tests/Unit/</directory>
+        </testsuite>
+        <testsuite name="Integration-tests">
+            <directory>tests/Integration/</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src/</directory>
+        </whitelist>
+    </filter>
+    <php>
+        <env name="DB_CONNECTION" value="testing"/>
+    </php>
+    <logging>
+        <log type="coverage-clover" target="build/logs/clover.xml"/>
+    </logging>
+</phpunit>
