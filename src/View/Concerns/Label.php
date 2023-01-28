@@ -10,7 +10,7 @@ trait Label
      * @param  ElementInterface  $element
      * @return string
      */
-    protected function label(ElementInterface $element)
+    protected function label(ElementInterface $element): string
     {
         $label = $element->getLabel();
         $type = $element->getAttribute('type');

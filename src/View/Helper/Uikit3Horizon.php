@@ -8,6 +8,7 @@ use Revolution\LaminasForm\View\Concerns\Label;
 use Revolution\LaminasForm\View\Concerns\Render;
 use Revolution\LaminasForm\View\Concerns\Row;
 use Revolution\LaminasForm\View\Concerns\Submit;
+use Revolution\LaminasForm\View\Concerns\View;
 
 class Uikit3Horizon extends Form
 {
@@ -16,6 +17,7 @@ class Uikit3Horizon extends Form
     use Label;
     use Submit;
     use Render;
+    use View;
 
     protected const DEFAULTS = [
         'wrapper'    => 'uk-margin',

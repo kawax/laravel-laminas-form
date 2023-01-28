@@ -10,7 +10,7 @@ trait Row
      * @param  ElementInterface  $element
      * @return string
      */
-    protected function row(ElementInterface $element)
+    protected function row(ElementInterface $element): string
     {
         $html = '<div class="';
         $html .= $element->getOption('wrapper-class') ?? self::DEFAULTS['wrapper'];

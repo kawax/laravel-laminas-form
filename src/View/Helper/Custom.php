@@ -6,6 +6,7 @@ use Laminas\Form\ElementInterface;
 use Laminas\Form\View\Helper\Form;
 use Revolution\LaminasForm\View\Concerns\Label;
 use Revolution\LaminasForm\View\Concerns\Render;
+use Revolution\LaminasForm\View\Concerns\View;
 
 /**
  * ViewHelper does not require the use of trait.
@@ -14,6 +15,7 @@ class Custom extends Form
 {
     use Label;
     use Render;
+    use View;
 
     protected const DEFAULTS = [
         'wrapper' => 'form-group row',

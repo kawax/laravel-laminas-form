@@ -10,7 +10,7 @@ trait Submit
      * @param  ElementInterface  $element
      * @return string
      */
-    protected function submit(ElementInterface $element)
+    protected function submit(ElementInterface $element): string
     {
         if ($element->getAttribute('type') !== 'submit') {
             return $this->getView()->formElement($element);

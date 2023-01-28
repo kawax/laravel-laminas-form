@@ -8,6 +8,7 @@ use Revolution\LaminasForm\View\Concerns\Label;
 use Revolution\LaminasForm\View\Concerns\Render;
 use Revolution\LaminasForm\View\Concerns\Row;
 use Revolution\LaminasForm\View\Concerns\Submit;
+use Revolution\LaminasForm\View\Concerns\View;
 
 class Bootstrap4Horizon extends Form
 {

@@ -10,7 +10,7 @@ trait Help
      * @param  ElementInterface  $element
      * @return string
      */
-    protected function helpText(ElementInterface $element)
+    protected function helpText(ElementInterface $element): string
     {
         if (empty($element->getOption('help-text'))) {
             return '';

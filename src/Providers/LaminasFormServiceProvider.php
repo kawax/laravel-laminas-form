@@ -15,7 +15,7 @@ class LaminasFormServiceProvider extends ServiceProvider
     /**
      * Boot the service provider.
      */
-    public function boot()
+    public function boot(): void
     {
         if ($this->app->runningInConsole()) {
             $this->commands(
@@ -38,7 +38,7 @@ class LaminasFormServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->mergeConfigFrom(
             __DIR__.'/../../config/laminas-form.php',
