@@ -2,13 +2,13 @@
 
 namespace Revolution\LaminasForm\View\Concerns;
 
-use Laminas\View\Renderer\RendererInterface as Renderer;
 use Laminas\View\Helper\HelperInterface;
+use Laminas\View\Renderer\RendererInterface as Renderer;
 
 trait View
 {
     /**
-     * Set the View object
+     * Set the View object.
      *
      * @param  Renderer  $view
      * @return HelperInterface
@@ -21,7 +21,7 @@ trait View
     }
 
     /**
-     * Get the view object
+     * Get the view object.
      *
      * @return null|Renderer
      */
