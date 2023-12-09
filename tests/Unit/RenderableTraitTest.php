@@ -32,6 +32,7 @@ class RenderableTraitTest extends TestCase
     /**
      * @param  string  $helperName
      * @param  string  $expectedString
+     *
      * @dataProvider callDataProvider
      */
     public function testCallWorks(string $helperName, string $expectedString): void

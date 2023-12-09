@@ -28,6 +28,7 @@ class FieldsetTest extends TestCase
 
     /**
      * @param  string  $formHelper
+     *
      * @testWith    ["anyOtherHelperMethodThatNoBodyWouldImplement"]
      *              ["anyOtherHelperMethodThatNoBodyWouldImplementEver"]
      *
