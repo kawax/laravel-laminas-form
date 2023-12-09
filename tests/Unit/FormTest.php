@@ -46,6 +46,7 @@ class FormTest extends TestCase
 
     /**
      * @param  string  $formHelper
+     *
      * @testWith    ["anyOtherHelperMethodThatNoBodyWouldImplement"]
      *              ["anyOtherHelperMethodThatNoBodyWouldImplementEver"]
      *
