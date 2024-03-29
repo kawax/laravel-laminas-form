@@ -20,10 +20,10 @@ class Bootstrap5Horizon extends Form
     use View;
 
     protected const DEFAULTS = [
-        'wrapper'    => 'mb-3',
-        'element'    => 'col-sm-10',
-        'submit'     => 'btn btn-primary',
-        'help_open'  => '<div class="form-text">',
+        'wrapper' => 'mb-3',
+        'element' => 'col-sm-10',
+        'submit' => 'btn btn-primary',
+        'help_open' => '<div class="form-text">',
         'help_close' => '</div>',
     ];
 }

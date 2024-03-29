@@ -20,10 +20,10 @@ class Uikit3Horizon extends Form
     use View;
 
     protected const DEFAULTS = [
-        'wrapper'    => 'uk-margin',
-        'element'    => 'uk-form-controls',
-        'submit'     => 'uk-button uk-button-primary',
-        'help_open'  => '<div class="uk-text-meta">',
+        'wrapper' => 'uk-margin',
+        'element' => 'uk-form-controls',
+        'submit' => 'uk-button uk-button-primary',
+        'help_open' => '<div class="uk-text-meta">',
         'help_close' => '</div>',
     ];
 }

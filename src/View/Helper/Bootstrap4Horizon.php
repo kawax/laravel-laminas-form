@@ -19,10 +19,10 @@ class Bootstrap4Horizon extends Form
     use Render;
 
     protected const DEFAULTS = [
-        'wrapper'    => 'form-group row',
-        'element'    => 'col-sm-10',
-        'submit'     => 'btn btn-primary',
-        'help_open'  => '<small class="form-text text-muted">',
+        'wrapper' => 'form-group row',
+        'element' => 'col-sm-10',
+        'submit' => 'btn btn-primary',
+        'help_open' => '<small class="form-text text-muted">',
         'help_close' => '</small>',
     ];
 }
