@@ -49,7 +49,6 @@ class CustomTest extends TestCase
 
     /**
      * @param  bool  $withValue
-     *
      */
     #[TestWith([true, false])]
     public function testRenderWithSubmitElementShouldWork(bool $withValue): void
