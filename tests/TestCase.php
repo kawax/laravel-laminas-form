@@ -5,7 +5,7 @@ namespace Revolution\LaminasForm\Tests;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Revolution\LaminasForm\Providers\LaminasFormServiceProvider;
 
-class TestCase extends OrchestraTestCase
+abstract class TestCase extends OrchestraTestCase
 {
     protected function getPackageProviders($app)
     {

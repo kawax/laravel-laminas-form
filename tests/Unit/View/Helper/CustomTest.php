@@ -9,6 +9,7 @@ use Laminas\Form\Form;
 use Laminas\ServiceManager\ServiceManager;
 use Laminas\View\HelperPluginManager;
 use Laminas\View\Renderer\PhpRenderer;
+use PHPUnit\Framework\Attributes\TestWith;
 use Revolution\LaminasForm\Tests\TestCase;
 use Revolution\LaminasForm\View\Helper\Custom;
 
@@ -49,9 +50,8 @@ class CustomTest extends TestCase
     /**
      * @param  bool  $withValue
      *
-     * @testWith    [true]
-     *              [false]
      */
+    #[TestWith([true, false])]
     public function testRenderWithSubmitElementShouldWork(bool $withValue): void
     {
         $value = 'Submit';

@@ -4,12 +4,13 @@ namespace Revolution\LaminasForm\Tests\Unit;
 
 use Laminas\Form\Element\Text;
 use Laminas\ServiceManager\Exception\ServiceNotFoundException;
+use PHPUnit\Framework\Attributes\TestWith;
 use Revolution\LaminasForm\Fieldset;
 use Revolution\LaminasForm\Tests\TestCase;
 
 class FieldsetTest extends TestCase
 {
-    protected $fieldset;
+    protected Fieldset $fieldset;
 
     public function setUp(): void
     {
@@ -29,12 +30,10 @@ class FieldsetTest extends TestCase
     /**
      * @param  string  $formHelper
      *
-     * @testWith    ["anyOtherHelperMethodThatNoBodyWouldImplement"]
-     *              ["anyOtherHelperMethodThatNoBodyWouldImplementEver"]
-     *
-     * @throws \Laminas\ServiceManager\Exception\ServiceNotFoundException
+    @throws \Laminas\ServiceManager\Exception\ServiceNotFoundException
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
+    #[TestWith(["anyOtherHelperMethodThatNoBodyWouldImplement", "anyOtherHelperMethodThatNoBodyWouldImplementEver"])]
     public function testRenderThrowsServiceNotFoundExceptionOnWrongHelper(string $formHelper): void
     {
         $this->expectException(ServiceNotFoundException::class);

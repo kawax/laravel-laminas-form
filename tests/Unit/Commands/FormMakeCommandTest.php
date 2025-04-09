@@ -8,7 +8,7 @@ use Revolution\LaminasForm\Tests\TestCase;
 
 class FormMakeCommandTest extends TestCase
 {
-    protected $command;
+    protected FormMakeCommand $command;
 
     public function setUp(): void
     {
