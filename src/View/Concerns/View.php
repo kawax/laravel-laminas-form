@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Revolution\LaminasForm\View\Concerns;
 
 use Laminas\View\Helper\HelperInterface;
@@ -9,9 +11,6 @@ trait View
 {
     /**
      * Set the View object.
-     *
-     * @param  Renderer  $view
-     * @return HelperInterface
      */
     public function setView(Renderer $view): HelperInterface
     {
@@ -22,8 +21,6 @@ trait View
 
     /**
      * Get the view object.
-     *
-     * @return null|Renderer
      */
     public function getView(): ?Renderer
     {

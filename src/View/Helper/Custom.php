@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Revolution\LaminasForm\View\Helper;
 
 use Laminas\Form\ElementInterface;
@@ -26,7 +28,6 @@ class Custom extends Form
     ];
 
     /**
-     * @param  ElementInterface  $element
      * @return string
      */
     protected function row(ElementInterface $element)
@@ -51,7 +52,6 @@ class Custom extends Form
     }
 
     /**
-     * @param  ElementInterface  $element
      * @return string
      */
     protected function submit(ElementInterface $element)
@@ -70,7 +70,6 @@ class Custom extends Form
     }
 
     /**
-     * @param  ElementInterface  $element
      * @return string
      */
     protected function helpText(ElementInterface $element)

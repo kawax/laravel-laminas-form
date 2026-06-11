@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Revolution\LaminasForm\Tests\Unit;
 
+use Illuminate\Contracts\Container\BindingResolutionException;
 use Laminas\Form\Element\Text;
 use Laminas\ServiceManager\Exception\ServiceNotFoundException;
 use PHPUnit\Framework\Attributes\TestWith;
@@ -12,13 +15,13 @@ class FieldsetTest extends TestCase
 {
     protected Fieldset $fieldset;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
-        $this->fieldset = new Fieldset();
+        $this->fieldset = new Fieldset;
     }
 
-    public function testRenderWorksCorrect(): void
+    public function test_render_works_correct(): void
     {
         $textElement = new Text('text');
         $this->fieldset->add($textElement);
@@ -28,19 +31,17 @@ class FieldsetTest extends TestCase
     }
 
     /**
-     * @param  string  $formHelper
-     *
-     * @throws \Laminas\ServiceManager\Exception\ServiceNotFoundException
-     * @throws \Illuminate\Contracts\Container\BindingResolutionException
+     * @throws ServiceNotFoundException
+     * @throws BindingResolutionException
      */
     #[TestWith(['anyOtherHelperMethodThatNoBodyWouldImplement', 'anyOtherHelperMethodThatNoBodyWouldImplementEver'])]
-    public function testRenderThrowsServiceNotFoundExceptionOnWrongHelper(string $formHelper): void
+    public function test_render_throws_service_not_found_exception_on_wrong_helper(string $formHelper): void
     {
         $this->expectException(ServiceNotFoundException::class);
         $this->fieldset->render($formHelper);
     }
 
-    public function testHelperThrowsServiceNotFoundExceptionOnInvalidMethod(): void
+    public function test_helper_throws_service_not_found_exception_on_invalid_method(): void
     {
         $this->expectException(ServiceNotFoundException::class);
         $helperName = uniqid('anyFakedMethod', true);

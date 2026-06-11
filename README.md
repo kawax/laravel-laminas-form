@@ -1,15 +1,16 @@
 # Laravel Laminas Form
 [![tests](https://github.com/kawax/laravel-laminas-form/actions/workflows/tests.yml/badge.svg)](https://github.com/kawax/laravel-laminas-form/actions/workflows/tests.yml)
-[![Maintainability](https://api.codeclimate.com/v1/badges/21666cb8ec565a23d92c/maintainability)](https://codeclimate.com/github/kawax/laravel-laminas-form/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/21666cb8ec565a23d92c/test_coverage)](https://codeclimate.com/github/kawax/laravel-laminas-form/test_coverage)
 
 ![Laravel Laminas Form](screenshot_bs5.png)
 
 https://docs.laminas.dev/laminas-form/
 
+> [!NOTE]
+> This package is not actively maintained.
+
 ## Requirements
 - PHP >= 8.2
-- Laravel >= 11.0
+- Laravel >= 12.0
 
 ## Versioning
 - Basic : semver

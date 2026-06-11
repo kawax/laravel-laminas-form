@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Revolution\LaminasForm\View\Helper;
 
 use Laminas\Form\View\Helper\Form;
@@ -12,11 +14,11 @@ use Revolution\LaminasForm\View\Concerns\View;
 
 class Bootstrap5Horizon extends Form
 {
-    use Row;
     use Help;
     use Label;
-    use Submit;
     use Render;
+    use Row;
+    use Submit;
     use View;
 
     protected const DEFAULTS = [

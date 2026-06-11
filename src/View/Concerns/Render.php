@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Revolution\LaminasForm\View\Concerns;
 
 use Laminas\Form\FieldsetInterface;
@@ -9,9 +11,6 @@ trait Render
 {
     /**
      * Render a form from the provided $form,.
-     *
-     * @param  FormInterface  $form
-     * @return string
      */
     public function render(FormInterface $form): string
     {

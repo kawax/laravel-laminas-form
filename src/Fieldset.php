@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Revolution\LaminasForm;
 
+use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Support\HtmlString;
 use Laminas\Form\Fieldset as LaminasFieldset;
 
@@ -12,10 +15,7 @@ class Fieldset extends LaminasFieldset
     }
 
     /**
-     * @param  string  $helper
-     * @return HtmlString
-     *
-     * @throws \Illuminate\Contracts\Container\BindingResolutionException
+     * @throws BindingResolutionException
      */
     public function render(string $helper = 'formCollection'): HtmlString
     {

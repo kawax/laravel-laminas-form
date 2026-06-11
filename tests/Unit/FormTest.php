@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Revolution\LaminasForm\Tests\Unit;
 
+use Illuminate\Contracts\Container\BindingResolutionException;
 use Laminas\Form\Element\Text;
 use Laminas\ServiceManager\Exception\ServiceNotFoundException;
 use PHPUnit\Framework\Attributes\TestWith;
@@ -13,13 +16,13 @@ class FormTest extends TestCase
 {
     protected Form $form;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
-        $this->form = new Form();
+        $this->form = new Form;
     }
 
-    public function testRenderWithElementsWorksCorrect(): void
+    public function test_render_with_elements_works_correct(): void
     {
         $textElement = new Text('text');
         $this->form->add($textElement);
@@ -31,7 +34,7 @@ class FormTest extends TestCase
         );
     }
 
-    public function testRenderWithFieldSetsWorksCorrect(): void
+    public function test_render_with_field_sets_works_correct(): void
     {
         $fieldset = new Fieldset('fieldset');
         $textElement = new Text('text');
@@ -46,19 +49,17 @@ class FormTest extends TestCase
     }
 
     /**
-     * @param  string  $formHelper
-     *
-     * @throws \Laminas\ServiceManager\Exception\ServiceNotFoundException
-     * @throws \Illuminate\Contracts\Container\BindingResolutionException
+     * @throws ServiceNotFoundException
+     * @throws BindingResolutionException
      */
     #[TestWith(['anyOtherHelperMethodThatNoBodyWouldImplement', 'anyOtherHelperMethodThatNoBodyWouldImplementEver'])]
-    public function testRenderThrowsServiceNotFoundExceptionOnWrongHelper(string $formHelper): void
+    public function test_render_throws_service_not_found_exception_on_wrong_helper(string $formHelper): void
     {
         $this->expectException(ServiceNotFoundException::class);
         $this->form->render($formHelper);
     }
 
-    public function testHelperThrowsServiceNotFoundExceptionOnInvalidMethod(): void
+    public function test_helper_throws_service_not_found_exception_on_invalid_method(): void
     {
         $this->expectException(ServiceNotFoundException::class);
         $helperName = uniqid('anyFakedMethod', true);

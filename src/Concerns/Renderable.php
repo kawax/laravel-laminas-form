@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Revolution\LaminasForm\Concerns;
 
 use Illuminate\Container\Container;
@@ -10,8 +12,6 @@ use Laminas\View\Renderer\RendererInterface;
 trait Renderable
 {
     /**
-     * @return RendererInterface
-     *
      * @throws BindingResolutionException
      */
     protected function getRenderer(): RendererInterface
@@ -20,9 +20,6 @@ trait Renderable
     }
 
     /**
-     * @param  string  $helper
-     * @return HtmlString
-     *
      * @throws BindingResolutionException
      * @throws \BadMethodCallException
      */
@@ -34,8 +31,6 @@ trait Renderable
     }
 
     /**
-     * @param  string  $method
-     * @param  array  $arguments
      * @return mixed
      *
      * @throws BindingResolutionException

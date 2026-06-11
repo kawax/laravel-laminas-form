@@ -1,15 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Revolution\LaminasForm\View\Concerns;
 
 use Laminas\Form\ElementInterface;
 
 trait Label
 {
-    /**
-     * @param  ElementInterface  $element
-     * @return string
-     */
     protected function label(ElementInterface $element): string
     {
         $label = $element->getLabel();

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Revolution\LaminasForm\Tests\Unit\View\Helper;
 
 use Laminas\Form\ConfigProvider;
@@ -17,15 +19,15 @@ class CustomTest extends TestCase
 {
     protected $helper;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
-        $helper = new Custom();
-        $renderer = new PhpRenderer();
-        $configProvider = new ConfigProvider();
+        $helper = new Custom;
+        $renderer = new PhpRenderer;
+        $configProvider = new ConfigProvider;
         $renderer->setHelperPluginManager(
             new HelperPluginManager(
-                new ServiceManager(),
+                new ServiceManager,
                 $configProvider->getViewHelperConfig()
             )
         );
@@ -34,7 +36,7 @@ class CustomTest extends TestCase
         $this->helper = $helper;
     }
 
-    public function testRenderWithRowElementShouldWork(): void
+    public function test_render_with_row_element_should_work(): void
     {
         $form = new Form('name');
         $element = new Text(uniqid('myUniqueName', true));
@@ -47,11 +49,8 @@ class CustomTest extends TestCase
         $this->assertStringContainsString('</div></div></form>', $output);
     }
 
-    /**
-     * @param  bool  $withValue
-     */
     #[TestWith([true, false])]
-    public function testRenderWithSubmitElementShouldWork(bool $withValue): void
+    public function test_render_with_submit_element_should_work(bool $withValue): void
     {
         $value = 'Submit';
         $form = new Form('name');
@@ -68,7 +67,7 @@ class CustomTest extends TestCase
         );
     }
 
-    public function testRenderWithHelpTextShouldWork(): void
+    public function test_render_with_help_text_should_work(): void
     {
         $form = new Form('name');
         $element = new Text(uniqid('myUniqueName', true));

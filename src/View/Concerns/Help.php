@@ -1,15 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Revolution\LaminasForm\View\Concerns;
 
 use Laminas\Form\ElementInterface;
 
 trait Help
 {
-    /**
-     * @param  ElementInterface  $element
-     * @return string
-     */
     protected function helpText(ElementInterface $element): string
     {
         if (empty($element->getOption('help-text'))) {

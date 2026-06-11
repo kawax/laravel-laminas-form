@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Revolution\LaminasForm\Commands;
 
 use Illuminate\Console\GeneratorCommand;
@@ -31,8 +33,6 @@ class FormMakeCommand extends GeneratorCommand
      * Get the stub file for the generator.
      *
      * @codeCoverageIgnore
-     *
-     * @return string
      */
     protected function getStub(): string
     {
@@ -45,7 +45,6 @@ class FormMakeCommand extends GeneratorCommand
      * @codeCoverageIgnore
      *
      * @param  string  $rootNamespace
-     * @return string
      */
     protected function getDefaultNamespace($rootNamespace): string
     {
@@ -54,8 +53,6 @@ class FormMakeCommand extends GeneratorCommand
 
     /**
      * Get the console command options.
-     *
-     * @return array
      */
     protected function getOptions(): array
     {

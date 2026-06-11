@@ -1,15 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Revolution\LaminasForm\View\Concerns;
 
 use Laminas\Form\ElementInterface;
 
 trait Row
 {
-    /**
-     * @param  ElementInterface  $element
-     * @return string
-     */
     protected function row(ElementInterface $element): string
     {
         $html = '<div class="';

@@ -1,15 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Revolution\LaminasForm\View\Concerns;
 
 use Laminas\Form\ElementInterface;
 
 trait Submit
 {
-    /**
-     * @param  ElementInterface  $element
-     * @return string
-     */
     protected function submit(ElementInterface $element): string
     {
         if ($element->getAttribute('type') !== 'submit') {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Revolution\LaminasForm\Tests\Unit\Commands;
 
 use Illuminate\Filesystem\Filesystem;
@@ -10,7 +12,7 @@ class FormMakeCommandTest extends TestCase
 {
     protected FormMakeCommand $command;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
         /**
@@ -20,12 +22,12 @@ class FormMakeCommandTest extends TestCase
         $this->command = new FormMakeCommand($mockedFileSystem);
     }
 
-    public function testNameEqualsDefaultName(): void
+    public function test_name_equals_default_name(): void
     {
         $this->assertEquals('make:form', $this->command->getName());
     }
 
-    public function testDescriptionEqualsDefaultDescription(): void
+    public function test_description_equals_default_description(): void
     {
         $this->assertEquals('Create a new form class', $this->command->getDescription());
     }

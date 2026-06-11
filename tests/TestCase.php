@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Revolution\LaminasForm\Tests;
 
 use Orchestra\Testbench\TestCase as OrchestraTestCase;

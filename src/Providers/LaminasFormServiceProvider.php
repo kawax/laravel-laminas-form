@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Revolution\LaminasForm\Providers;
 
 use Illuminate\Support\ServiceProvider;
@@ -35,8 +37,6 @@ class LaminasFormServiceProvider extends ServiceProvider
 
     /**
      * Register the service provider.
-     *
-     * @return void
      */
     public function register(): void
     {
