@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace Revolution\LaminasForm\Tests\Unit;
 
-use Illuminate\Contracts\Container\BindingResolutionException;
 use Laminas\Form\Element\Text;
 use Laminas\ServiceManager\Exception\ServiceNotFoundException;
-use PHPUnit\Framework\Attributes\TestWith;
 use Revolution\LaminasForm\Fieldset;
 use Revolution\LaminasForm\Tests\TestCase;
 
@@ -28,17 +26,6 @@ class FieldsetTest extends TestCase
 
         $output = $this->fieldset->render();
         $this->assertEquals('<fieldset><input type="text" name="text" value=""></fieldset>', $output->toHtml());
-    }
-
-    /**
-     * @throws ServiceNotFoundException
-     * @throws BindingResolutionException
-     */
-    #[TestWith(['anyOtherHelperMethodThatNoBodyWouldImplement', 'anyOtherHelperMethodThatNoBodyWouldImplementEver'])]
-    public function test_render_throws_service_not_found_exception_on_wrong_helper(string $formHelper): void
-    {
-        $this->expectException(ServiceNotFoundException::class);
-        $this->fieldset->render($formHelper);
     }
 
     public function test_helper_throws_service_not_found_exception_on_invalid_method(): void

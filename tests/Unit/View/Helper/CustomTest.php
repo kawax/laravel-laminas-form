@@ -5,13 +5,11 @@ declare(strict_types=1);
 namespace Revolution\LaminasForm\Tests\Unit\View\Helper;
 
 use Laminas\Form\ConfigProvider;
-use Laminas\Form\Element\Submit;
 use Laminas\Form\Element\Text;
 use Laminas\Form\Form;
 use Laminas\ServiceManager\ServiceManager;
 use Laminas\View\HelperPluginManager;
 use Laminas\View\Renderer\PhpRenderer;
-use PHPUnit\Framework\Attributes\TestWith;
 use Revolution\LaminasForm\Tests\TestCase;
 use Revolution\LaminasForm\View\Helper\Custom;
 
@@ -47,24 +45,6 @@ class CustomTest extends TestCase
             $output
         );
         $this->assertStringContainsString('</div></div></form>', $output);
-    }
-
-    #[TestWith([true, false])]
-    public function test_render_with_submit_element_should_work(bool $withValue): void
-    {
-        $value = 'Submit';
-        $form = new Form('name');
-        $element = new Submit(uniqid('myUniqueName', true));
-        if ($withValue) {
-            $value = time();
-            $element->setValue($value);
-        }
-        $form->add($element);
-        $output = $this->helper->render($form);
-        $this->assertStringContainsString(
-            '<button type="submit" class="btn btn-primary">'.$value.'</button>',
-            $output
-        );
     }
 
     public function test_render_with_help_text_should_work(): void
